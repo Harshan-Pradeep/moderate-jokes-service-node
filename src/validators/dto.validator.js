@@ -7,7 +7,8 @@ const createTypeSchema = Joi.object({
 const updateJokeSchema = Joi.object({
   content: Joi.string().min(5),
   type: Joi.string(),
-  status: Joi.string().valid('pending', 'approved', 'rejected')
+  status: Joi.string().valid('pending', 'approved', 'rejected'),
+  author: Joi.string()
 });
 
 module.exports = {
