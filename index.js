@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const config = require('./config/config');
-const authMiddleware = require('./middleware/auth.middleware');
-const moderateController = require('./controllers/moderate.controller');
-const authController = require('./controllers/auth.controller');
+const config = require('./src/config/config');
+const authMiddleware = require('./src/middleware/auth.middleware');
+const moderateController = require('./src/controllers/moderate.controller');
+const authController = require('./src/controllers/auth.controller');
 
 const app = express();
 
