@@ -39,7 +39,6 @@ router.put('/update',
   createValidationMiddleware(updateJokeSchema),
   async (req, res) => {
     try {
-    console.log("id", req.query.id)
       const result = await moderateService.updateJoke(req.query.id, req.body);
       res.json(result);
     } catch (error) {

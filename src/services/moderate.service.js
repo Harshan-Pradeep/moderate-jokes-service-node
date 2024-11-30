@@ -49,7 +49,6 @@ class ModerateService {
                 `${config.submitServiceUrl}/api/v1/jokes/update/${jokeId}`,
                 updateJokeDto
             );
-            console.log("updatedJoke",updatedJoke)
             // If status is approved, create joke in delivery service
             if (updateJokeDto.status === JokeStatus.APPROVED) {
                 try {
