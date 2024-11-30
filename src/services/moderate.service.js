@@ -46,20 +46,20 @@ class ModerateService {
         try {
             // First update the joke
             const updatedJoke = await httpClient.put(
-                `${config.submitServiceUrl}/api/v1/jokes/update?id=${jokeId}`,
+                `${config.submitServiceUrl}/api/v1/jokes/update/${jokeId}`,
                 updateJokeDto
             );
-
+            console.log("updatedJoke",updatedJoke)
             // If status is approved, create joke in delivery service
             if (updateJokeDto.status === JokeStatus.APPROVED) {
                 try {
-                    console.log("node-update function")
                     const deliveryJoke = await httpClient.post(
                         `${config.deliveryServiceUrl}/api/v1/delivery/submit`,
                         {
-                            content: updatedJoke.content,
-                            type: updatedJoke.type,
-                            status: updatedJoke.status
+                            content: updatedJoke.data.content,
+                            type: updatedJoke.data.type,
+                            status: updatedJoke.data.status,
+                            author: updatedJoke.data.author
                         }
                     );
 
