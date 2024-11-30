@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = {
-  port: process.env.PORT || 3004,
+  port: process.env.PORT || 3000,
   deliveryServiceUrl: process.env.DELIVERY_SERVICE_URL,
   submitServiceUrl: process.env.SUBMIT_SERVICE_URL,
   jwtSecret: process.env.JWT_SECRET,
