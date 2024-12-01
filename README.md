@@ -75,7 +75,7 @@ Access the application at `http://localhost:3000` | [http://ec2-13-233-163-9.ap-
    - Create a `.env` file with the required environment variables (see [Environment Variables](#environment-variables)).
 7. **Start the Application**:
    ```bash
-   npm run start
+   node index.js
    ```
 9. **Configure a Process Manager **:
    - Use PM2 to keep the application running in the background.
