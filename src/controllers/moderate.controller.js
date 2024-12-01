@@ -100,38 +100,6 @@ const { createTypeSchema, updateJokeSchema } = require('../validators/dto.valida
  *       500:
  *         description: Error creating joke type
  *
- * /moderate:
- *   post:
- *     summary: Create a new joke
- *     tags: [Moderate]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/CreateJoke'
- *     responses:
- *       201:
- *         description: Joke created successfully
- *         content:
- *           application/json:
- *             example:
- *               statusCode: 201
- *               message: "Joke created successfully"
- *               data:
- *                 content: "Why did the chicken cross the road? To get to the other side!"
- *                 type: "Knock-Knock"
- *                 author: "John Doe"
- *       400:
- *         description: Bad request
- *         content:
- *           application/json:
- *             example:
- *               statusCode: 400
- *               message: "Invalid request data"
- *       500:
- *         description: Error creating joke
- *
  * /moderate/delete:
  *   delete:
  *     summary: Delete a joke by ID
