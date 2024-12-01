@@ -19,27 +19,6 @@ const { createTypeSchema, updateJokeSchema } = require('../validators/dto.valida
  *           minLength: 3
  *           example: "Knock-Knock"
  *
- *     CreateJoke:
- *       type: object
- *       required:
- *         - content
- *         - type
- *         - author
- *       properties:
- *         content:
- *           type: string
- *           description: The content of the joke
- *           minLength: 3
- *           example: "Why did the chicken cross the road? To get to the other side!"
- *         type:
- *           type: string
- *           description: The category/type of the joke
- *           example: "Knock-Knock"
- *         author:
- *           type: string
- *           description: Name of the joke author
- *           example: "John Doe"
- *
  *     UpdateJoke:
  *       type: object
  *       properties:

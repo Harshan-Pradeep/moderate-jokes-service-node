@@ -17,13 +17,9 @@ const swaggerOptions = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'Jokes API',
+      title: 'Joke Service API',
       version: '1.0.0',
-      description: 'API for jokes management and moderation',
-      contact: {
-        name: 'Your Name',
-        email: 'your.email@example.com'
-      }
+      description: 'API for jokes management and moderation'
     },
     servers: [
       {
