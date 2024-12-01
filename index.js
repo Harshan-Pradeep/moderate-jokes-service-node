@@ -4,11 +4,39 @@ const config = require('./src/config/config');
 const authMiddleware = require('./src/middleware/auth.middleware');
 const moderateController = require('./src/controllers/moderate.controller');
 const authController = require('./src/controllers/auth.controller');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Swagger configuration
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Jokes API',
+      version: '1.0.0',
+      description: 'API for jokes management and moderation',
+      contact: {
+        name: 'Your Name',
+        email: 'your.email@example.com'
+      }
+    },
+    servers: [
+      {
+        url: `http://localhost:${config.port}/api/v1`,
+        description: 'Local server'
+      }
+    ],
+  },
+  apis: ['./src/controllers/*.js'],
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Public routes
 app.use('/api/v1/auth', authController);
