@@ -110,7 +110,7 @@ An example `.env.example` file is provided for reference.
 
 ## API Documentation
 
-The API is documented using Swagger.
+The API is documented using Swagger
 
 Access the API documentation at:
 
